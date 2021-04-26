@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Sign Up</title>
+    <link href="index.css" rel="stylesheet">
+    <meta http-equiv="refresh" content="val==2; url = project-1.html" /> 
+</head>
+<body>
+    <div class="Box1">
+        <p id="heading">Sign up</p>
+        <form id="form" onsubmit="return validation()" name="Login-Form">
+            <input type="email" name="Email Id" placeholder="Enter Username" id="username" required>
+            <span id="errormail" style="color:red"></span>
+            <input type="password" name="Password" placeholder="Enter Password" id="password" required>
+            <span id="errorpass" style="color:red"></span>
+            <button id="Submit">Login</button>
+        </form>
+        
+    </div>
+    <script type="text/javascript">
+        function validation()
+        {
+            var val;
+            var user1 = document.getElementById('username').value;
+            var pass1 = document.getElementById('password').value;
+            var usercheck = /^[A-Za-z0-9._]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+            var passcheck = /^[A-Za-z0-9]{8,}$/;
+            if(usercheck.test(user1))
+            {
+                document.getElementById('errormail').innerHTML = " ";
+            }
+            else
+            {
+                document.getElementById('errormail').innerHTML = "**INVALID EMAIL";
+                return false;
+            }
+            if(passcheck.test(pass1))
+            {
+                val=2;
+                document.getElementById('password').innerHTML = " ";
+                wait();
+                window.open('project-1.html');
+            }
+            else
+            {
+                document.getElementById('errorpass').innerHTML = "**INVALID PASSWORD";
+                return false;
+            }
+            function wait()
+            {
+                setTimeout('Loading...', 5000);
+            }
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz4qkyOfd16hqhBeejssLJSRu-aJB7fpBkXokkH_1sUFzJZRMx9W89ZBPEGrks7exRhEw/exec'
+            const form = document.forms['Login-Form']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script><br>
+</body>
+</html>

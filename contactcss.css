@@ -1,0 +1,55 @@
+body{
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact{
+    width: 200px;
+    height: 400px;
+    background-color: salmon;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px cyan;
+}
+h3{
+    height: 10%;
+    background-color: transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: cyan;
+    font: bold;
+}
+.content{
+    height: 90%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#phone,#mail,#whatsapp{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+    border-radius: 50px;
+}
+#phone:hover,#mail:hover,#whatsapp:hover{
+    border-bottom: 5px solid snow;
+}
+#phone1,#mail1,#whatsapp1{
+    width: 15px;
+    height: 15px;
+    padding-top: 5px;
+}
