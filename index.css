@@ -79,7 +79,7 @@ body{
     align-items: center;
     justify-content: center;
 }
-@media(max-width:600px) {
+@media(min-width:600px) {
     .Box1{
     transform: scale(1.5);
     }   
