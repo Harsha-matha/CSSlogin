@@ -16,7 +16,7 @@ a{
     text-decoration: none;
 }
 .page-name{
-    width: 20%;
+    width: max-content;
     height: 100px;
     font-size: 75px;
     display: flex;
@@ -34,7 +34,7 @@ a{
     text-shadow: -4px 1px 5px rgba(0, 0, 0, 0.25);
 }
 .tabs{
-    width: 50%;
+    width: 70%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -52,7 +52,102 @@ img{
     width: auto;
     height: 15px;
 }
+
+.min,.nav{
+    display: none;
+}
+#cancel{
+    visibility: hidden;
+}
 #css{
     width: auto;
-    height: 45px;
+    height: 40px;
+}
+
+
+
+
+@media screen and (max-width:700px) {
+
+    .tabs{
+        display: none;
+    }
+    .min{
+        display: flex;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: -150px;
+        width: 150px;
+        height: 100%;
+        top: 0px;
+        background-image: linear-gradient(to bottom,#C4FFFB  ,#DEFFFD );
+        transition: all 0.5s ease;
+    }
+    header{
+        width: 150px;
+        height: 50px;
+        font-size: 30px;
+        margin-top: 25px;
+        text-align: center;
+    }
+    hr{
+        margin-top: 0px;
+        border-width: 0.1px;
+        border-color: black;
+        border-radius: 5px;
+    }
+    .nav-nav{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #tab{
+        margin: 10px;
+        padding: 0%;
+    }
+    a{
+        font-size: 20px;
+    }
+    img{
+        width: 20px;
+    }
+    .checkbox:checked ~ .nav{
+        right: 0px   ;
+    }
+    #check{
+        display: none;
+    }
+    label #btn,label #cancel{
+        position: absolute;
+        cursor: pointer;
+    }
+    label #btn{
+        right: 40px;
+        top: 35px;
+        font-size: 35px;
+        transition: all .5s ease;
+    }
+    label #cancel{
+        z-index: 1111;
+        right: 0px;
+        top: 35px;
+        font-size: 30px;
+        transition: all .52s ease;
+    }
+    #check:checked ~ .nav{
+        right: 0;
+    }
+    #check:checked ~ label #btn{
+        right:120px;
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+    #check:checked ~ label #cancel{
+        visibility: visible;
+        right: 120px;
+    }
 }
